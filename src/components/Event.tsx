@@ -25,12 +25,6 @@ const Event = ({ event, ld }: EventProps) => {
             <p>{event.location}</p>
             {ld ? (
               <Table striped className="table tw-bg-[#e7f1ff]">
-                <thead>
-                  <tr>
-                    <td>Round</td>
-                    <td>Table</td>
-                  </tr>
-                </thead>
                 <tbody>
                   <tr>
                     <td>Round 1</td>
