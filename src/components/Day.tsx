@@ -12,9 +12,13 @@ const Day = ({ day, events }: DayProps) => {
       <Accordion.Item eventKey="0">
         <Accordion.Header>Your Day {day} Schedule</Accordion.Header>
         <Accordion.Body>
-          {events.map((event, index) => (
-            <Event event={event} key={index} />
-          ))}
+          {events.map((event, index) =>
+            event.name === "Leaders Dialogue" ? (
+              <Event event={event} key={index} ld={true} />
+            ) : (
+              <Event event={event} key={index} />
+            )
+          )}
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>

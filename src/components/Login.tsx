@@ -59,7 +59,7 @@ const Login = () => {
               <Button
                 variant="outline-primary"
                 onClick={onSubmit}
-                className="tw-w-20"
+                className="tw-w-20 tw-whitespace-nowrap"
               >
                 {showLoader ? (
                   <>

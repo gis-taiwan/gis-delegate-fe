@@ -1,4 +1,4 @@
-import axios, { AxiosError, AxiosInstance } from "axios";
+import axios, { AxiosInstance } from "axios";
 
 const instance: AxiosInstance = axios.create({
   baseURL: "http://localhost:5000",
@@ -19,11 +19,14 @@ interface IScheduleData {
   first_name: string;
   last_name: string;
   prefer_name: string;
+  round1: string;
+  round2: string;
+  round3: string;
 }
 
 const verifyCode = async (giscode: string): Promise<boolean> => {
   try {
-    const response = await instance.get(`/verify/${giscode}`);
+    await instance.get(`/verify/${giscode}`);
     return true;
   } catch (error) {
     return false;
