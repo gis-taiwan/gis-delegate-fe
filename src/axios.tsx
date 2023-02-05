@@ -1,7 +1,7 @@
 import axios, { AxiosInstance } from "axios";
 
 const instance: AxiosInstance = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://be.admin.gis-taiwan.ntu.edu.tw",
 });
 
 interface IScheduleData {

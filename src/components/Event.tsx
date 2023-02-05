@@ -22,7 +22,7 @@ const Event = ({ event, ld }: EventProps) => {
             {event.time} {event.name}
           </Accordion.Header>
           <Accordion.Body className="tw-text-white tw-bg-gis-blue">
-            <p>{event.location}</p>
+            <p className="last:tw-mb-0">{event.location}</p>
             {ld ? (
               <Table striped className="table tw-bg-[#e7f1ff]">
                 <tbody>
