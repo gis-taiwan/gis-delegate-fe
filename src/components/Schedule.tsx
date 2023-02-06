@@ -159,14 +159,16 @@ const Schedule = ({ giscode }: ScheduleProps) => {
               time: "13:30 - 17:50",
               name: "Leaders Dialogue",
               location: "The Howard Plaza Hotel Taipei B2",
-              round1: info.round1,
-              round2: info.round2,
-              round3: info.round3,
+              content: {
+                "Round 1": info.round1,
+                "Round 2": info.round2,
+                "Round 3": info.round3,
+              }
             },
             {
               time: "18:30 - 21:30",
               name: "Banquet",
-              location: "The Howard Plaza Hotel Taipei B2",
+              location: `The Howard Plaza Hotel Taipei B2, Table ${info.banquet}`
             },
           ]}
         />

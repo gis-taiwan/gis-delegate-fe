@@ -23,6 +23,7 @@ interface IScheduleData {
   round2: string;
   round3: string;
   grouping: string;
+  banquet: string;
 }
 
 const verifyCode = async (giscode: string): Promise<boolean> => {
