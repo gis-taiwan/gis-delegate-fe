@@ -6,11 +6,12 @@ import p3 from "../images/footer/3.png";
 import p4 from "../images/footer/4.png";
 import p5 from "../images/footer/5.png";
 import p6 from "../images/footer/6.png";
+import p7 from "../images/footer/7.png";
 import closeImg from "../images/close.png";
 
 const Footer = () => {
   const [show, setShow] = useState<boolean>(true);
-  const imgs = [p1, p2, p3, p4, p5, p6];
+  const imgs = [p1, p2, p3, p4, p5, p6, p7];
   const urls = [
     "https://fucoi.cyberbiz.co/",
     "",
@@ -18,6 +19,7 @@ const Footer = () => {
     "https://www.firstbank.com.tw/sites/fcb/personalhome",
     "#",
     "https://www.pwc.tw/",
+    "#",
   ];
   return show ? (
     <Container

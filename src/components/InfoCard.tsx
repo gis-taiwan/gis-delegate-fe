@@ -4,7 +4,7 @@ interface InfoCardProps {
   giscode: string;
   first_name: string;
   last_name: string;
-  team?: string;
+  grouping: string;
   dietary_requirement: string;
 }
 
@@ -13,6 +13,7 @@ const InfoCard = ({
   first_name,
   last_name,
   dietary_requirement,
+  grouping,
 }: InfoCardProps) => {
   return (
     <Card body className="tw-w-full">
@@ -34,7 +35,7 @@ const InfoCard = ({
           </tr>
           <tr>
             <td>Team</td>
-            <td>Placeholder</td>
+            <td>{grouping}</td>
           </tr>
           <tr>
             <td>Dietary Restrictions</td>

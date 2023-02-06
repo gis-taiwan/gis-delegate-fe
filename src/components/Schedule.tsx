@@ -51,6 +51,7 @@ const Schedule = ({ giscode }: ScheduleProps) => {
           first_name={info.first_name}
           last_name={info.last_name}
           dietary_requirement={info.dietary_requirement}
+          grouping={info.grouping}
         />
       </Row>
       <Row className="tw-px-2 tw-py-2">
