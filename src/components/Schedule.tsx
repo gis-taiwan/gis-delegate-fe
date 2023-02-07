@@ -18,7 +18,7 @@ const Schedule = ({ giscode }: ScheduleProps) => {
 
   const [error, setError] = useState<boolean>(false);
 
-  const [rand] = useState<number>(Math.floor(Math.random() * 8));
+  const [rand] = useState<number>(Math.floor(Math.random() * 6));
 
   const [show, setShow] = useState<boolean>(true);
 
@@ -163,12 +163,12 @@ const Schedule = ({ giscode }: ScheduleProps) => {
                 "Round 1": info.round1,
                 "Round 2": info.round2,
                 "Round 3": info.round3,
-              }
+              },
             },
             {
               time: "18:30 - 21:30",
               name: "Banquet",
-              location: `The Howard Plaza Hotel Taipei B2, Table ${info.banquet}`
+              location: `The Howard Plaza Hotel Taipei B2, Table ${info.banquet}`,
             },
           ]}
         />
