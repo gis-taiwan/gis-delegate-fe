@@ -4,7 +4,8 @@ import { fetchSchedule, IScheduleData } from "../axios";
 import InfoCard from "./InfoCard";
 import Day from "./Day";
 import Loader from "./Loader";
-import Commercial from "./Commercial";
+import gala_f from "../images/schedule/gala_first_half.png";
+import gala_s from "../images/schedule/gala_second_half.png";
 
 interface ScheduleProps {
   giscode: string;
@@ -42,14 +43,13 @@ const Schedule = ({ giscode }: ScheduleProps) => {
     <Container className="tw-font-gis tw-pt-[2%] tw-w-[90%]">
       <Row>
         <h2 className="tw-font-bold tw-px-2 tw-py-2">
-          Hello {info.prefer_name}
+          Hello {info.full_name}
         </h2>
       </Row>
       <Row className="tw-px-2 tw-py-2">
         <InfoCard
           giscode={giscode}
-          first_name={info.first_name}
-          last_name={info.last_name}
+          full_name={info.full_name}
           dietary_requirement={info.dietary_requirement}
           grouping={info.grouping}
         />
@@ -59,30 +59,30 @@ const Schedule = ({ giscode }: ScheduleProps) => {
           day={1}
           events={[
             {
-              time: "9:00 - 11:00",
+              time: "8:00 - 11:00",
               name: "Opening Ceremony",
               location:
-                "Shih-Liang Chien Lecture Hall, Zonghe Lecture Building",
+                "NTU Shih-Liang Chien Lecture Hall, Multi-Purpose Classroom Building",
             },
             {
-              time: "11:30 - 12:30",
+              time: "11:20 - 12:10",
               name: "Lunch Break",
               location: info.day1_lunch,
             },
             {
-              time: "13:00 - 15:00",
-              name: "Keynote Speech",
-              location: info.day1_keynote,
+              time: "12:10 - 15:00",
+              name: "Keynote Speech & Panel Discussion - Smart City",
+              location: "International Conference Hall (R100), The Institute of Applied Mechanics",
             },
             {
-              time: "15:30 - 16:30",
-              name: "Panel Discussion",
-              location: info.day1_keynote,
+              time: "15:00 - 17:20",
+              name: "Keynote Speech & Panel Discussion - Sustainable Finance",
+              location: "International Conference Hall (R100), The Institute of Applied Mechanics",
             },
             {
-              time: "18:00 - 21:00",
-              name: "Night Tour",
-              location: "Ningxia Night Market",
+              time: "17:50 - 21:00",
+              name: "Night Tour - Dadaocheng",
+              location: "Main Gate of National Taiwan University",
             },
           ]}
         />
@@ -92,24 +92,24 @@ const Schedule = ({ giscode }: ScheduleProps) => {
           day={2}
           events={[
             {
-              time: "8:50 - 11:30",
-              name: "Cultural Festival",
-              location: "National Taiwan University Sports Center 1F",
+              time: "9:00 - 11:30",
+              name: "Keynote Speech & Panel Discussion - Artificial Intelligence",
+              location: "International Conference Hall (R100), The Institute of Applied Mechanics",
             },
             {
-              time: "12:00 - 12:40",
+              time: "11:45 - 12:40",
               name: "Lunch Break",
               location: info.day2_lunch,
             },
             {
-              time: "13:15 - 15:15",
-              name: "Keynote Speech",
-              location: info.day2_keynote,
+              time: "13:00 - 15:00",
+              name: "Mentor Discussion",
+              location: info.day2_mentor,
             },
             {
-              time: "15:30 - 16:45",
-              name: "Panel Discussion",
-              location: info.day2_keynote,
+              time: "15:30 - 18:00",
+              name: "Cultural Festival",
+              location: "National Taiwan University Sports Center 1F",
             },
           ]}
         />
@@ -119,19 +119,19 @@ const Schedule = ({ giscode }: ScheduleProps) => {
           day={3}
           events={[
             {
-              time: "9:00 - 11:30",
+              time: "8:45 - 12:00",
               name: "Critical Sprout",
               location: info.day3_critical,
             },
             {
-              time: "11:45 - 13:00",
+              time: "12:15 - 13:00",
               name: "Lunch Break",
               location: info.day3_lunch,
             },
             {
-              time: "13:00 - 14:00",
+              time: "13:00 - 14:10",
               name: "Group Discussion",
-              location: info.day3_lunch,
+              location: info.day3_group,
             },
             {
               time: "14:30 - 18:00",
@@ -148,7 +148,7 @@ const Schedule = ({ giscode }: ScheduleProps) => {
             {
               time: "9:00 - 11:30",
               name: "Mentor Discussion",
-              location: info.day4_mentor,
+              location: info.day2_mentor,
             },
             {
               time: "11:30 - 12:30",
@@ -156,9 +156,9 @@ const Schedule = ({ giscode }: ScheduleProps) => {
               location: info.day4_lunch,
             },
             {
-              time: "13:30 - 17:50",
+              time: "12:30 - 16:20",
               name: "Leaders Dialogue",
-              location: "The Howard Plaza Hotel Taipei B2",
+              location: "W Hotel 8F Mega Room",
               content: {
                 "Round 1": info.round1,
                 "Round 2": info.round2,
@@ -166,9 +166,21 @@ const Schedule = ({ giscode }: ScheduleProps) => {
               },
             },
             {
-              time: "18:30 - 21:30",
+              time: "16:40 - 17:10",
+              name: "GALA - First Half",
+              location: "W Hotel 8F Mega Room",
+              imageUrl: gala_f,
+            },
+            {
+              time: "17:30 - 18:00",
+              name: "GALA - Second Half",
+              location: "W Hotel 8F Mega Room",
+              imageUrl: gala_s,
+            },
+            {
+              time: "18:00 - 21:20",
               name: "Banquet",
-              location: `The Howard Plaza Hotel Taipei B2, Table ${info.banquet}`,
+              location: `W Hotel 8F Mega Room, Table ${info.banquet}`,
             },
           ]}
         />
@@ -178,9 +190,14 @@ const Schedule = ({ giscode }: ScheduleProps) => {
           day={5}
           events={[
             {
-              time: "9:00 - 12:10",
-              name: "IP Exhibition",
+              time: "8:30 - 11:10",
+              name: "IP Presentation",
               location: info.day5_presentation,
+            },
+            {
+              time: "11:10 - 12:10",
+              name: "IP Exhibition",
+              location: info.day5_exhibition,
             },
             {
               time: "12:30 - 13:15",
@@ -189,29 +206,25 @@ const Schedule = ({ giscode }: ScheduleProps) => {
             },
             {
               time: "13:30 - 14:30",
-              name: "IP Presentation",
+              name: "IP Awarding",
               location:
-                "Shih-Liang Chien Lecture Hall, Zonghe Lecture Building",
+                "NTU Shih-Liang Chien Lecture Hall, Multi-Purpose Classroom Building",
             },
             {
-              time: "14:45 - 16:30",
+              time: "14:45 - 16:00",
               name: "Closing Ceremony",
               location:
-                "Shih-Liang Chien Lecture Hall, Zonghe Lecture Building",
+                "NTU Shih-Liang Chien Lecture Hall, Multi-Purpose Classroom Building",
             },
             {
               time: "18:00 - 21:00",
               name: "After Party",
-              location: "Westar, Ximending",
+              location: "Babylon Taipei",
             },
           ]}
         />
       </Row>
-      <Modal show={show} onHide={() => setShow(false)} className="s-modal">
-        <Modal.Body>
-          <Commercial rand={rand} />
-        </Modal.Body>
-      </Modal>
+      
     </Container>
   );
 };

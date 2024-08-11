@@ -18,7 +18,7 @@ const Login = () => {
   const [showLoader, setShowLoader] = useState(false);
   const onSubmit = async () => {
     setShowLoader(true);
-    const regTest = /^[A-Z][0-9]{5}$/.test(code);
+    const regTest = /^(AI|SF|SC)\d{3}$/.test(code);
     if (regTest && (await verifyCode(code))) {
       localStorage.setItem("giscode", code);
       navigate(`/${code}`);
@@ -33,7 +33,7 @@ const Login = () => {
   return (
     <Container className="tw-font-gis tw-pt-[2%] tw-w-[90%]">
       <Row>
-        <h2 className="tw-font-bold tw-px-2 tw-py-2"> Welcome to GIS 2023!</h2>
+        <h2 className="tw-font-bold tw-px-2 tw-py-2"> Welcome to GIS 2024!</h2>
       </Row>
       <Row>
         <Card body className="tw-px-2 tw-w-full">
@@ -44,7 +44,7 @@ const Login = () => {
                 <Form.Group controlId="exampleForm.ControlInput1">
                   <Form.Control
                     type="string"
-                    placeholder="A23___"
+                    placeholder="AI___"
                     onChange={(e) => setCode(e.target.value)}
                   />
                 </Form.Group>
